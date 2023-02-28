@@ -1,5 +1,6 @@
 import unittest
 from Stack import *
+from custom_queue import *
 
 
 class Testutils(unittest.TestCase):
@@ -15,6 +16,13 @@ class Testutils(unittest.TestCase):
         stack1.push('data2')
         stack1.pop()
         self.assertEqual('data1', stack1.top.data)
+
+    def test_enqueue(self):
+        q = Queue()
+        q.enqueue('data1')
+        q.enqueue('data2')
+        q.enqueue('data3')
+        self.assertEqual('data2', q.head.next.data)
 
 
 if __name__ == '__name__':
