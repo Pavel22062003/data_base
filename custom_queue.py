@@ -19,14 +19,16 @@ class Queue:
             self.tail.next = new_node
             self.tail = new_node
 
+    def dequeue(self):
 
-
-
-
+      """Удаляет первый элемент из очереди и возвращает этот удалённый элемент"""
+      remove = self.head.data
+      self.top = self.head.next
+      return remove
 
 
 q1 = Queue()
 q1.enqueue('data1')
 q1.enqueue('data2')
 q1.enqueue('data3')
-print(q1.tail.data)
+print(q1.dequeue())
