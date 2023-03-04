@@ -1,7 +1,7 @@
 import unittest
 from Stack import *
 from custom_queue import *
-
+from Linked_list import *
 
 class Testutils(unittest.TestCase):
     def test(self):
@@ -23,6 +23,15 @@ class Testutils(unittest.TestCase):
         q.enqueue('data2')
         q.enqueue('data3')
         self.assertEqual('data2', q.head.next.data)
+
+    def test_linkedlist(self):
+        l = LinkedList()
+        l.insert_beginning({'id': 1})
+        l.insert_at_end({'id': 2})
+        self.assertEqual({'id': 2}, l.head.next.data)
+
+
+
 
 
 if __name__ == '__name__':
